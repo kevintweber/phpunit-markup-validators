@@ -1,6 +1,6 @@
 <?php
 
-namespace kevintweber\phpunit-w3c-validators\Connector;
+namespace kevintweber\PhpunitW3CValidators\Connector;
 
 abstract class Connector
 {

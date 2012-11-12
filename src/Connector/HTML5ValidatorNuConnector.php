@@ -1,8 +1,8 @@
 <?php
 
-namespace kevintweber\phpunit-w3c-validators\Connector;
+namespace kevintweber\PhpunitW3CValidators\Connector;
 
-use kevintweber\phpunit-w3c-validators\Connector\HTMLConnector;
+use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 
 class HTML5ValidatorNuConnector extends HTMLConnector
 {

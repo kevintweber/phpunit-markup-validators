@@ -1,10 +1,10 @@
 <?php
 
-namespace kevintweber\phpunit-w3c-validator\Assert;
+namespace kevintweber\PhpunitW3CValidators\Assert;
 
-use kevintweber\phpunit-w3c-validator\Connector\HTMLConnector;
-use kevintweber\phpunit-w3c-validator\Connector\HTML5ValidatorConnector;
-use kevintweber\phpunit-w3c-validator\Constraint\HTML;
+use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
+use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorConnector;
+use kevintweber\PhpunitW3CValidators\Constraint\HTML;
 
 class Html5 extends PHPUnit_Framework_Assert
 {

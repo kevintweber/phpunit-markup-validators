@@ -1,8 +1,8 @@
 <?php
 
-namespace kevintweber\phpunit-w3c-validator\Constraint;
+namespace kevintweber\PhpunitW3CValidators\Constraint;
 
-use kevintweber\phpunit-w3c-validator\Connector\HTMLConnector;
+use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 
 class HTML extends PHPUnit_Framework_Constraint
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace kevintweber\phpunit-w3c-validators\Connector;
+namespace kevintweber\PhpunitW3CValidators\Connector;
 
-use kevintweber\phpunit-w3c-validators\Connector\Connector;
+use kevintweber\PhpunitW3CValidators\Connector\Connector;
 
 /**
  * A helper class from HTML connectors
