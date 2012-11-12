@@ -3,7 +3,7 @@
 namespace kevintweber\PhpunitW3CValidators\Assert;
 
 use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
-use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorConnector;
+use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
 use kevintweber\PhpunitW3CValidators\Constraint\HTML;
 
 class Html5 extends PHPUnit_Framework_Assert
@@ -17,7 +17,7 @@ class Html5 extends PHPUnit_Framework_Assert
      */
     public static function IsValid($html,
                                    $message = '',
-                                   HTMLConnector $connector = new HTML5ValidatorConnector())
+                                   HTMLConnector $connector = new HTML5ValidatorNuConnector())
     {
         // Check that $html is a string.
         if (empty($html) || !is_string($html)) {
