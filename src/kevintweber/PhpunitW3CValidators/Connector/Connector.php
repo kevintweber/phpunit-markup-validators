@@ -85,7 +85,7 @@ abstract class Connector
      *
      * @param string $value The new value of 'input'
      */
-    public function setInput(string $value)
+    public function setInput($value)
     {
         $this->input = $value;
     }
@@ -105,7 +105,7 @@ abstract class Connector
      *
      * @param string $value The new value of 'outputType'
      */
-    public function setOutputType(string $value)
+    public function setOutputType($value)
     {
         $this->outputType = $value;
     }
@@ -145,7 +145,7 @@ abstract class Connector
      *
      * @param string $value The new value of 'url'
      */
-    public function setUrl(string $value)
+    public function setUrl($value)
     {
         if ('http' != substr($value, 0, 4)) {
             $value = 'http://' . $value;
@@ -169,7 +169,7 @@ abstract class Connector
      *
      * @param string $value The new value of 'userAgent'
      */
-    public function setUserAgent(string $value)
+    public function setUserAgent($value)
     {
         $this->userAgent = $value;
     }
