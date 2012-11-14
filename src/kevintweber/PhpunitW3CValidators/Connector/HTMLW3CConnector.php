@@ -32,7 +32,7 @@ class HTMLW3CConnector extends HTMLConnector
 	 */
     public function processResult($result)
     {
-		$dom = new DOMDocument();
+		$dom = new \DOMDocument();
         if ($dom->loadXML($result)) {
 			$validityElement = $dom->getElementsByTagName('validity');
             if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
