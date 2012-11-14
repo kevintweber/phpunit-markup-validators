@@ -41,7 +41,7 @@ Here is an example of a minimal test case that will pass.
     {
 	    public function testHTMLValidation()
 	    {
-		    Html5::IsValid("<div>Whoa</div>", "Optional custom message.");
+		    Html5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
 	    }
     }
 
