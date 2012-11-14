@@ -4,8 +4,9 @@ This is an extension for [PHPUnit][phpunit] that uses the W3C online validators.
 
 ## Installation
 
- 1) Install [Composer][composer].
- 2) In your composer.json file, add the following:
+1) Install [Composer][composer].
+
+2) In your composer.json file, add the following:
 
     {
         "repositories": [
@@ -20,10 +21,11 @@ This is an extension for [PHPUnit][phpunit] that uses the W3C online validators.
 	    "minimum-stability": "dev"
     }
 
- 3) Run "composer install".
- 4) Watch the magic happen ...
+3) Run "composer install".
 
- This library and all it's dependencies will be downloaded to your "vendor" directory.  [Composer][composer] offers many VERY USEFUL features.  Read the composer documentation: it will be worth your time.
+4) Watch the magic happen ...
+
+This library and all it's dependencies will be downloaded to your "vendor" directory.  [Composer][composer] offers many VERY USEFUL features.  Read the composer documentation: it will be worth your time.
 
 ## Usage
 
