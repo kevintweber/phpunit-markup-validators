@@ -6,7 +6,7 @@ use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
 use kevintweber\PhpunitW3CValidators\Constraint\HTML;
 
-class HTML5 extends PHPUnit_Framework_Assert
+class HTML5 extends \PHPUnit_Framework_Assert
 {
     /**
      * Asserts that the HTML string is valid.

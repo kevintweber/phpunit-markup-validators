@@ -4,7 +4,7 @@ namespace kevintweber\PhpunitW3CValidators\Constraint;
 
 use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 
-class HTML extends PHPUnit_Framework_Constraint
+class HTML extends \PHPUnit_Framework_Constraint
 {
     /**
      * The service connector.
