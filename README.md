@@ -4,26 +4,26 @@ This is an extension for [PHPUnit][phpunit] that uses the W3C online validators.
 
 ## Installation
 
-1. Install [Composer][composer].
-2. In your composer.json file, include the following:
+ 1) Install [Composer][composer].
+ 2) In your composer.json file, add the following:
 
-        {
-            "repositories": [
-                {
-			        "type": "vcs",
-                    "url": "http://github.com/kevintweber/PhpunitW3CValidators"
-                }
-            ],
-            "require": {
-                "kevintweber/PhpunitW3CValidators": "*"
-            },
-	        "minimum-stability": "dev"
-        }
+    {
+        "repositories": [
+            {
+			    "type": "vcs",
+                "url": "http://github.com/kevintweber/PhpunitW3CValidators"
+            }
+        ],
+        "require": {
+            "kevintweber/PhpunitW3CValidators": "*"
+        },
+	    "minimum-stability": "dev"
+    }
 
-3. Run "composer install".
-4. Watch the magic happen ...
+ 3) Run "composer install".
+ 4) Watch the magic happen ...
 
-This library and all it's dependencies will be downloaded to your "vendor" directory.  [Composer][composer] offers many VERY USEFUL features.  Read the composer documentation: it will be worth your time.
+ This library and all it's dependencies will be downloaded to your "vendor" directory.  [Composer][composer] offers many VERY USEFUL features.  Read the composer documentation: it will be worth your time.
 
 ## Usage
 
