@@ -11,7 +11,7 @@ class HTMLW3CConnector extends HTMLConnector
      */
     public function __construct()
     {
-        $this->setOutputType("text");
+        $this->setOutputType("soap12");
         $this->setUrl("http://validator.w3.org/");
     }
 
@@ -23,12 +23,23 @@ class HTMLW3CConnector extends HTMLConnector
             );
     }
 
+	/**
+	 * Parses the SOAP 1.2 response.
+	 *
+	 * @todo Need to parse warnings and errors.
+	 *
+	 * @param string $result The SOAP 1.2 response.
+	 */
     public function processResult($result)
     {
-        if (stripos($result, 'Error') !== false || stripos($result, 'Warning') !== false) {
-            return false;
-        }
+		$dom = new DOMDocument();
+        if ($dom->loadXML($result)) {
+			$validityElement = $dom->getElementsByTagName('validity');
+            if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
+				return true;
+			}
+		}
 
-        return true;
+		return false;
     }
 }
