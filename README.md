@@ -44,12 +44,12 @@ class test extends PHPUnit_Framework_TestCase
 {
     public function testHTMLValidation()
 	{
-	    Html5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
+	    HTML5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
 	}
 }
 ```
 
-2) From your console, run "php vendor/bin/phpunit <path-to-tests>"
+2) From your console, run "php vendor/bin/phpunit \<path-to-tests\>"
 
 ## Validators
 
@@ -65,8 +65,6 @@ class test extends PHPUnit_Framework_TestCase
 </table>
 
 ## License
-The HTML validator uses the excellent [validator.nu].  Please read the [Terms of service][validator.nu/tos] for validator.nu.
-
 PhpunitW3CValidators is licensed under the MIT license.  See `LICENSE` for more details.
 
 ## Authors
