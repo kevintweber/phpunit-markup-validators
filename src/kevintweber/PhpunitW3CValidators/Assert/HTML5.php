@@ -5,6 +5,7 @@ namespace kevintweber\PhpunitW3CValidators\Assert;
 use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
 use kevintweber\PhpunitW3CValidators\Constraint\Generic;
+use Symfony\Component\Process\Process;
 
 class HTML5 extends \PHPUnit_Framework_Assert
 {
