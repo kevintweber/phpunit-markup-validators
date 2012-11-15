@@ -23,23 +23,23 @@ class HTMLW3CConnector extends HTMLConnector
             );
     }
 
-	/**
-	 * Parses the SOAP 1.2 response.
-	 *
-	 * @todo Need to parse warnings and errors.
-	 *
-	 * @param string $result The SOAP 1.2 response.
-	 */
+    /**
+     * Parses the SOAP 1.2 response.
+     *
+     * @todo Need to parse warnings and errors.
+     *
+     * @param string $result The SOAP 1.2 response.
+     */
     public function processResult($result)
     {
-		$dom = new \DOMDocument();
+        $dom = new \DOMDocument();
         if ($dom->loadXML($result)) {
-			$validityElement = $dom->getElementsByTagName('validity');
+            $validityElement = $dom->getElementsByTagName('validity');
             if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
-				return true;
-			}
-		}
+                return true;
+            }
+        }
 
-		return false;
+        return false;
     }
 }

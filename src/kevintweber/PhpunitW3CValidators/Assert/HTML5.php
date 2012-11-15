@@ -16,8 +16,8 @@ class HTML5 extends \PHPUnit_Framework_Assert
      * @param HTMLConnector  $connector  A connector to a HTML5 validation service.
      */
     public static function IsValidMarkup($html,
-										 $message = '',
-										 HTMLConnector $connector = null)
+                                         $message = '',
+                                         HTMLConnector $connector = null)
     {
         // Check that $html is a string.
         if (empty($html) || !is_string($html)) {
@@ -26,21 +26,21 @@ class HTML5 extends \PHPUnit_Framework_Assert
                 );
         }
 
-		// Assign connector if there isn't one already.
-		if ($connector === null) {
-			$connector = new HTML5ValidatorNuConnector();
-		}
+        // Assign connector if there isn't one already.
+        if ($connector === null) {
+            $connector = new HTML5ValidatorNuConnector();
+        }
 
-		// Parse the html.
+        // Parse the html.
         $connector->setInput($html);
         $response = $connector->execute();
 
-		// Tell PHPUnit of the results.
+        // Tell PHPUnit of the results.
         $constraint = new Generic($connector);
         self::assertThat($response, $constraint, $message);
     }
 
-	/**
+    /**
      * Asserts that the HTML5 file is valid.
      *
      * @param string         $path       The file path to be validated.
@@ -48,34 +48,34 @@ class HTML5 extends \PHPUnit_Framework_Assert
      * @param HTMLConnector  $connector  A connector to a HTML5 validation service.
      */
     public static function IsValidFile($path,
-									   $message = '',
-									   HTMLConnector $connector = null)
+                                       $message = '',
+                                       HTMLConnector $connector = null)
     {
         // Check that $path is exists.
         if (!file_exists($path)) {
-			throw new PHPUnit_Framework_Exception(
-				sprintf('File "%s" does not exist.' . "\n", $path)
-			);
+            throw new PHPUnit_Framework_Exception(
+                sprintf('File "%s" does not exist.' . "\n", $path)
+                );
         }
 
-		// Get file contents.
-		$html = file_get_contents($path);
-		if ($html === false) {
+        // Get file contents.
+        $html = file_get_contents($path);
+        if ($html === false) {
             throw new PHPUnit_Framework_Exception(
-				sprintf('Cannot read file "%s".' . "\n", $path)
-			);
-		}
+                sprintf('Cannot read file "%s".' . "\n", $path)
+                );
+        }
 
-		// Assign connector if there isn't one already.
-		if ($connector === null) {
-			$connector = new HTML5ValidatorNuConnector();
-		}
+        // Assign connector if there isn't one already.
+        if ($connector === null) {
+            $connector = new HTML5ValidatorNuConnector();
+        }
 
-		// Parse the html.
+        // Parse the html.
         $connector->setInput($html);
         $response = $connector->execute();
 
-		// Tell PHPUnit of the results.
+        // Tell PHPUnit of the results.
         $constraint = new Generic($connector);
         self::assertThat($response, $constraint, $message);
     }
