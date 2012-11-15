@@ -2,9 +2,9 @@
 
 namespace kevintweber\PhpunitW3CValidators\Constraint;
 
-use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
+use kevintweber\PhpunitW3CValidators\Connector\Connector;
 
-class HTML extends \PHPUnit_Framework_Constraint
+class Generic extends \PHPUnit_Framework_Constraint
 {
     /**
      * The service connector.
@@ -14,7 +14,7 @@ class HTML extends \PHPUnit_Framework_Constraint
     /**
      * Constructor
      */
-    public function __construct(HTMLConnector $connector)
+    public function __construct(Connector $connector)
     {
         $this->connector = $connector;
     }

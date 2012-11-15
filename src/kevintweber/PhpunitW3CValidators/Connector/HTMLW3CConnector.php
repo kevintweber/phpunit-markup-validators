@@ -12,7 +12,7 @@ class HTMLW3CConnector extends HTMLConnector
     public function __construct()
     {
         $this->setOutputType("soap12");
-        $this->setUrl("http://validator.w3.org/");
+        $this->setUrl("http://validator.w3.org/check");
     }
 
     protected function getPostVariables()

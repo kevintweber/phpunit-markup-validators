@@ -5,7 +5,7 @@ namespace kevintweber\PhpunitW3CValidators\Connector;
 use kevintweber\PhpunitW3CValidators\Connector\Connector;
 
 /**
- * A helper class from HTML connectors
+ * A base class from HTML connectors
  */
 abstract class HTMLConnector extends Connector
 {

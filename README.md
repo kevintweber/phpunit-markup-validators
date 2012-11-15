@@ -29,21 +29,27 @@ This library and all it's dependencies will be downloaded to your "vendor" direc
 
 ## Usage
 
+1) Build a test case as below:
+
 Here is an example of a minimal test case that will pass.
 
-    <?php
+```php
+<?php
 
-    require_once("vendor/autoload.php");
+require_once("vendor/autoload.php");
 
-    use kevintweber\PhpunitW3CValidators\Assert\Html5;
+use kevintweber\PhpunitW3CValidators\Assert\Html5;
 
-    class test extends PHPUnit_Framework_TestCase
-    {
-	    public function testHTMLValidation()
-	    {
-		    Html5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
-	    }
-    }
+class test extends PHPUnit_Framework_TestCase
+{
+    public function testHTMLValidation()
+	{
+	    Html5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
+	}
+}
+```
+
+2) From your console, run "php vendor/bin/phpunit <path-to-tests>"
 
 ## License
 The HTML validator uses the excellent [validator.nu].  Please read the [Terms of service][validator.nu/tos] for validator.nu.
