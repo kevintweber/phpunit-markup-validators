@@ -58,7 +58,7 @@ class test extends PHPUnit_Framework_TestCase
 <tr><th>Class</th><th>Validates</th><th>Service</th></tr>
 </thead>
 <tbody>
-<tr><td>HTML5</td><td>HTML5</td><td>http://validator.nu/</td></tr>
+<tr><td>HTML5</td><td>HTML5</td><td>http://html5.validator.nu/</td></tr>
 <tr><td>HTML</td><td>HTML and XHTML</td><td>http://validator.w3.org/</td></tr>
 <tr><td>CSS</td><td>CSS Levels 1-3</td><td>http://jigsaw.w3.org/css-validator/</td></tr>
 </tbody>
