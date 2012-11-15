@@ -1,6 +1,6 @@
-# HTML and CSS validation for PHPUnit
+# HTML and CSS Validation for PHPUnit
 
-This is an extension for [PHPUnit][phpunit] that uses the W3C online validators.
+This is an extension for [PHPUnit][phpunit] that uses online services for markup validation.
 
 ## Installation
 

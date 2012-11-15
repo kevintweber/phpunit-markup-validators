@@ -7,7 +7,8 @@
     "license": "MIT",
     "require": {
         "php": ">= 5.3.3",
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "3.7.*",
+		"symfony/process": "2.*"
     },
     "autoload": {
         "psr-0": { "kevintweber\\PhpunitW3CValidators\\": "src/" }
