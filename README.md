@@ -51,6 +51,19 @@ class test extends PHPUnit_Framework_TestCase
 
 2) From your console, run "php vendor/bin/phpunit <path-to-tests>"
 
+## Validators
+
+<table>
+<thead>
+<tr><th>Class</th><th>Validates</th><th>Service</th></tr>
+</thead>
+<tbody>
+<tr><td>HTML5</td><td>HTML5</td><td>http://validator.nu/</td></tr>
+<tr><td>HTML</td><td>HTML and XHTML</td><td>http://validator.w3.org/</td></tr>
+<tr><td>CSS</td><td>CSS Levels 1-3</td><td>http://jigsaw.w3.org/css-validator/</td></tr>
+</tbody>
+</table>
+
 ## License
 The HTML validator uses the excellent [validator.nu].  Please read the [Terms of service][validator.nu/tos] for validator.nu.
 
