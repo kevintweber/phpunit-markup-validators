@@ -20,7 +20,7 @@ abstract class ResponseParser
 			$element = $DOMElement->getElementsByTagName($tagName);
 
 			if ($element->length) {
-				$result[$name] = $element->item(0)->nodeValue;
+				$result[$tagName] = $element->item(0)->nodeValue;
 			}
 		}
 
