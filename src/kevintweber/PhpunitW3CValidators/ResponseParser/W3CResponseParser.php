@@ -23,7 +23,7 @@ class W3CResponseParser extends ResponseParser implements SelfDescribing
 
 	public function __toString()
 	{
-		return $this->response['type'] . " on line " . $this->response['data']['line'] .
-			": " . $this->response['data']['message'];
+		return $this->response['type'] . " on line " . trim($this->response['data']['line']) .
+			": " . trim($this->response['data']['message']);
 	}
 }
