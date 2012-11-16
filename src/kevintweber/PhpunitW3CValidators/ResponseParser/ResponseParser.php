@@ -12,12 +12,12 @@ abstract class ResponseParser
 	 *
 	 * @return array An array of tag name indexed results.
 	 */
-	protected function parseSoap12(array $tagNameArray, \DOMNodeList $nodeList)
+	protected function parseSoap12(array $tagNameArray, \DOMElement $DOMElement)
 	{
 		$result = array();
 
 		foreach ($tagNameArray as $tagName) {
-			$element = $nodeList->getElementsByTagName($tagName);
+			$element = $DOMElement->getElementsByTagName($tagName);
 
 			if ($element->length) {
 				$result[$name] = $element->item(0)->nodeValue;

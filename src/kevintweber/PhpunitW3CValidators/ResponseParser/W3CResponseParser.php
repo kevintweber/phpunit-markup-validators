@@ -15,10 +15,10 @@ class W3CResponseParser extends ResponseParser implements SelfDescribing
 	 *
 	 * @param DOMNodeList $nodeList A DOMNodeList object
 	 */
-	public function __construct($type, \DOMNodeList $nodeList)
+	public function __construct($type, \DOMElement $DOMElement)
 	{
 		$this->response['type'] = $type;
-		$this->response['data'] = $this->parseSoap12(array('line', 'message'), $nodeList);
+		$this->response['data'] = $this->parseSoap12(array('line', 'message'), $DOMElement);
 	}
 
 	public function __toString()
