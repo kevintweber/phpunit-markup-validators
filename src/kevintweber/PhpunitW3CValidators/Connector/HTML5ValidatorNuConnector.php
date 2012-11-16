@@ -23,7 +23,7 @@ class HTML5ValidatorNuConnector extends HTMLConnector
             );
     }
 
-    public function processResult($result)
+    public function processResponse($result)
     {
         if (stripos($result, 'Error') !== false || stripos($result, 'Warning') !== false) {
             return false;

@@ -4,7 +4,7 @@ namespace kevintweber\PhpunitW3CValidators\Assert;
 
 use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
 use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
-use kevintweber\PhpunitW3CValidators\Constraint\Generic;
+use kevintweber\PhpunitW3CValidators\Constraint\GenericConstraint;
 use Symfony\Component\Process\Process;
 
 class HTML5 extends \PHPUnit_Framework_Assert
@@ -37,7 +37,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         $response = $connector->execute();
 
         // Tell PHPUnit of the results.
-        $constraint = new Generic($connector);
+        $constraint = new GenericConstraint($connector);
         self::assertThat($response, $constraint, $message);
     }
 
@@ -77,7 +77,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         $response = $connector->execute();
 
         // Tell PHPUnit of the results.
-        $constraint = new Generic($connector);
+        $constraint = new GenericConstraint($connector);
         self::assertThat($response, $constraint, $message);
     }
 
@@ -122,7 +122,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         $response = $connector->execute();
 
         // Tell PHPUnit of the results.
-        $constraint = new Generic($connector);
+        $constraint = new GenericConstraint($connector);
         self::assertThat($response, $constraint, $message);
     }
 }

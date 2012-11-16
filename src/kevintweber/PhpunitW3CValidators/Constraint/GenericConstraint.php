@@ -4,7 +4,7 @@ namespace kevintweber\PhpunitW3CValidators\Constraint;
 
 use kevintweber\PhpunitW3CValidators\Connector\Connector;
 
-class Generic extends \PHPUnit_Framework_Constraint
+class GenericConstraint extends \PHPUnit_Framework_Constraint
 {
     /**
      * The service connector.
@@ -28,7 +28,7 @@ class Generic extends \PHPUnit_Framework_Constraint
      */
     protected function matches($other)
     {
-        return $this->connector->processResult($other);
+        return $this->connector->processResponse($other);
     }
 
     /**
@@ -66,6 +66,6 @@ class Generic extends \PHPUnit_Framework_Constraint
      */
     protected function additionalFailureDescription($other)
     {
-        return $other;
+        return $this->connector->describeFailure($other);
     }
 }

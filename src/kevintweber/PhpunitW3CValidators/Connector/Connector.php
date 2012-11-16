@@ -68,7 +68,19 @@ abstract class Connector
      *
      * @return bool True is valid.
      */
-    abstract public function processResult($result);
+    abstract public function processResponse($response);
+
+	/**
+	 * A helper function to parse the validation service response.
+	 *
+	 * @param string $response The response text.
+	 *
+	 * @return string A description of the failure.
+	 */
+	public function describeFailure($response)
+	{
+		return $response;
+	}
 
     /**
      * Getter for 'input'.
