@@ -1,6 +1,6 @@
 <?php
 
-namespace kevintweber\PhpunitW3CValidators\Util;
+namespace kevintweber\PhpunitW3CValidators\ResponseParser;
 
 use kevintweber\PhpunitW3CValidators\ResponseParser\ResponseParser;
 use kevintweber\PhpunitW3CValidators\Util\SelfDescribing;
