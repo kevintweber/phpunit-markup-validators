@@ -109,20 +109,17 @@ class HTML5 extends \PHPUnit_Framework_Assert
             $connector = new HTML5ValidatorNuConnector();
         }
 
-        // Get the source.
-        $process = new Process('wget ' . $url);
+        // Query the service.
+        $process = new Process($connector->getUrl() . "?output=" .
+							   $connector->getOutput() . "&url=" . $url);
         $process->setTimeout(10);
         $process->run();
         if (!$process->isSuccessful()) {
             throw new \PHPUnit_Framework_Exception($process->getErrorOutput());
         }
 
-        // Parse the html.
-        $connector->setInput($process->getOutput());
-        $response = $connector->execute();
-
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
-        self::assertThat($response, $constraint, $message);
+        self::assertThat($process->getOutput(), $constraint, $message);
     }
 }
