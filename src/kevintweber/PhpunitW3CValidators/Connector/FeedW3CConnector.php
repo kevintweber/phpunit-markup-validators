@@ -36,12 +36,17 @@ class FeedW3CConnector extends FeedConnector
      */
     public function processResponse($response)
     {
-        $dom = new \DOMDocument();
-        if ($dom->loadXML($response)) {
-            $validityElement = $dom->getElementsByTagName('validity');
-            if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
-                return true;
+        try {
+            $dom = new \DOMDocument();
+            if ($dom->loadXML($response)) {
+                $validityElement = $dom->getElementsByTagName('validity');
+                if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
+                    return true;
+                }
             }
+        }
+        catch (Exception $e) {
+            throw new \PHPUnit_Framework_Exception($e->getMessage());
         }
 
         return false;

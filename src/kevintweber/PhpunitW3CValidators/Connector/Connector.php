@@ -35,7 +35,8 @@ abstract class Connector
             CURLOPT_PORT           => $this->port,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $this->getPostVariables()
+            CURLOPT_POSTFIELDS     => $this->getPostVariables(),
+            CURLOPT_HTTPHEADER     => array('Content-Type: text/plain')
             );
 
         $curl = curl_init();
@@ -43,7 +44,7 @@ abstract class Connector
 
         if (!$response = curl_exec($curl)) {
             throw new PHPUnit_Framework_Exception(
-                sprintf('Can\'t check validation. cURL returning error %s',
+                sprintf('Unable to validate. cURL returning error %s',
                         trigger_error(curl_error($curl))
                     )
                 );
@@ -70,17 +71,17 @@ abstract class Connector
      */
     abstract public function processResponse($response);
 
-	/**
-	 * A helper function to parse the validation service response.
-	 *
-	 * @param string $response The response text.
-	 *
-	 * @return string A description of the failure.
-	 */
-	public function describeFailure($response)
-	{
-		return $response;
-	}
+    /**
+     * A helper function to parse the validation service response.
+     *
+     * @param string $response The response text.
+     *
+     * @return string A description of the failure.
+     */
+    public function describeFailure($response)
+    {
+        return $response;
+    }
 
     /**
      * Getter for 'input'.
