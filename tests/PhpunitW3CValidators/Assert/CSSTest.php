@@ -11,21 +11,19 @@
 
 namespace PhpunitW3CValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Assert\HTML5;
+use kevintweber\PhpunitW3CValidators\Assert\CSS;
 
-class HTML5Test extends \PHPUnit_Framework_TestCase
+class CSSTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Asssert\HTML5::IsValidMarkup
+     * @covers kevintweber\PhpunitW3CValidators\Asssert\CSS::IsValidMarkup
      */
     public function testIsValidMarkup()
     {
-        HTML5::IsValidMarkup("<section><div>Whoa</div></section>",
-                             "Valid HTML5 fragment.");
+        CSS::IsValidMarkup("div{color:black;}");
 
         try {
-            HTML5::IsValidMarkup("<section><div>Whoa</section></div>",
-                                 "Invalid HTML5 fragment.");
+            CSS::IsValidMarkup("div{color:badcolordude!;}");
         }
         catch (\PHPUnit_Framework_AssertionFailedError $e) {
             return;
@@ -39,6 +37,7 @@ class HTML5Test extends \PHPUnit_Framework_TestCase
      */
     public function testIsValidUrl()
     {
-        HTML5::IsValidUrl("http://www.w3.org/TR/html5/", "Valid HTML5 url.");
+        CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
+                        "Valid CSS url.");
     }
 }

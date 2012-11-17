@@ -119,8 +119,9 @@ class HTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Query the service.
-        $process = new Process("wget " . $connector->getUrl() . "?output=" .
-                               $connector->getOutputType() . "&url=" . $url);
+        $getString = "?output=" . urlencode($connector->getOutputType()) .
+            "&url=" . urlencode($url);
+        $process = new Process("wget " . $connector->getUrl() . $getString);
         $process->setTimeout(10);
         $process->run();
         if (!$process->isSuccessful()) {
