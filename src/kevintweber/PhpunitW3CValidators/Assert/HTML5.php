@@ -41,9 +41,9 @@ class HTML5 extends \PHPUnit_Framework_Assert
             $connector = new HTML5ValidatorNuConnector();
         }
 
-        // Parse the html.
+        // Validate the html.
         $connector->setInput($html);
-        $response = $connector->execute();
+        $response = $connector->execute('markup');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
@@ -83,7 +83,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
 
         // Parse the html.
         $connector->setInput($html);
-        $response = $connector->execute();
+        $response = $connector->execute('file');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
@@ -118,18 +118,12 @@ class HTML5 extends \PHPUnit_Framework_Assert
             $connector = new HTML5ValidatorNuConnector();
         }
 
-        // Query the service.
-        $getString = "?output=" . urlencode($connector->getOutputType()) .
-            "&url=" . urlencode($url);
-        $process = new Process("wget " . $connector->getUrl() . $getString);
-        $process->setTimeout(10);
-        $process->run();
-        if (!$process->isSuccessful()) {
-            throw new \PHPUnit_Framework_Exception($process->getErrorOutput());
-        }
+        // Parse the html.
+        $connector->setInput($html);
+        $response = $connector->execute('url');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
-        self::assertThat($process->getOutput(), $constraint, $message);
+        self::assertThat($response, $constraint, $message);
     }
 }

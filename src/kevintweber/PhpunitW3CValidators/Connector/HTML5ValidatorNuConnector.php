@@ -24,20 +24,40 @@ class HTML5ValidatorNuConnector extends HTMLConnector
         $this->setUrl("http://html5.validator.nu/");
     }
 
-    protected function getPostVariables()
+    protected function getMarkupOpts()
     {
-        return array(
-            'out' => $this->getOutputType(),
-            'content' => $this->getInput()
-            );
+        return array(CURLOPT_URL        => $this->getUrl(),
+                     CURLOPT_POSTFIELDS => array(
+                         'out' => $this->getOutputType(),
+                         'content' => $this->getInput()
+                         ));
     }
 
+    protected function getFileOpts()
+    {
+        return array(CURLOPT_URL        => $this->getUrl(),
+                     CURLOPT_POSTFIELDS => array(
+                         'out' => $this->getOutputType(),
+                         'content' => $this->getInput()
+                         ));
+    }
+
+    protected function getUrlOpts()
+    {
+        return array(CURLOPT_URL => $this->getUrl() . "?out=" .
+                     urlencode($this->getOutputType()) . "&doc=" .
+                     urlencode($this->getInput()));
+    }
+
+    /**
+     * @return bool True if the response is valid.
+     */
     public function processResponse($result)
     {
-        if (stripos($result, 'Error') !== false || stripos($result, 'Warning') !== false) {
-            return false;
+        if (stripos($result, 'is valid HTML') !== false) {
+            return true;
         }
 
-        return true;
+        return false;
     }
 }

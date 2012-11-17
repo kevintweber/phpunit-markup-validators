@@ -44,9 +44,9 @@ class Feed extends \PHPUnit_Framework_Assert
             $connector = new FeedW3CConnector();
         }
 
-        // Parse the html.
+        // Validate the feed.
         $connector->setInput($feed);
-        $response = $connector->execute();
+        $response = $connector->execute('markup');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
@@ -84,9 +84,9 @@ class Feed extends \PHPUnit_Framework_Assert
             $connector = new FeedW3CConnector();
         }
 
-        // Parse the html.
+        // Validate the feed
         $connector->setInput($feed);
-        $response = $connector->execute();
+        $response = $connector->execute('file');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
@@ -121,18 +121,12 @@ class Feed extends \PHPUnit_Framework_Assert
             $connector = new FeedW3CConnector();
         }
 
-        // Query the service.
-        $getString = "?output=" . urlencode($connector->getOutputType()) .
-            "&url=" . urlencode($url);
-        $process = new Process("wget " . $connector->getUrl() . $getString);
-        $process->setTimeout(10);
-        $process->run();
-        if (!$process->isSuccessful()) {
-            throw new \PHPUnit_Framework_Exception($process->getErrorOutput());
-        }
+        // Validate the feed
+        $connector->setInput($feed);
+        $response = $connector->execute('url');
 
         // Tell PHPUnit of the results.
         $constraint = new GenericConstraint($connector);
-        self::assertThat($process->getOutput(), $constraint, $message);
+        self::assertThat($response, $constraint, $message);
     }
 }

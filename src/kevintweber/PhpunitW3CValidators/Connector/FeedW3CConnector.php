@@ -27,13 +27,31 @@ class FeedW3CConnector extends FeedConnector
         $this->setUrl("http://validator.w3.org/feed/check.cgi");
     }
 
-    protected function getPostVariables()
+    protected function getMarkupOpts()
     {
-        return array(
-            'output' => $this->getOutputType(),
-            'manual' => "1",
-            'rawdata' => $this->getInput()
-            );
+        return array(CURLOPT_URL        => $this->getUrl(),
+                     CURLOPT_POSTFIELDS => array(
+                         'output' => $this->getOutputType(),
+                         'manual' => '1',
+                         'rawdata' => $this->getInput()
+                         ));
+    }
+
+    protected function getFileOpts()
+    {
+        return array(CURLOPT_URL        => $this->getUrl(),
+                     CURLOPT_POSTFIELDS => array(
+                         'output' => $this->getOutputType(),
+                         'manual' => '1',
+                         'rawdata' => $this->getInput()
+                         ));
+    }
+
+    protected function getUrlOpts()
+    {
+        return array(CURLOPT_URL => $this->getUrl() . "?output=" .
+                     urlencode($this->getOutputType()) . "&url=" .
+                     urlencode($this->getInput()));
     }
 
     /**
@@ -68,20 +86,27 @@ class FeedW3CConnector extends FeedConnector
      */
     public function describeFailure($response)
     {
-        // Parse response.
-        $dom = new \DOMDocument();
-        if ($dom->loadXML($response)) {
-            // Parse errors.
-            $errors = $dom->getElementsByTagName('error');
-            foreach ($errors as $error) {
-                $this->responseArray[] = new W3CResponseParser('Error', $error);
-            }
+        $responseArray = array();
 
-            // Parse warnings.
-            $warnings = $dom->getElementsByTagName('warning');
-            foreach ($warnings as $warning) {
-                $this->responseArray[] = new W3CResponseParser('Warning', $warning);
+        // Parse response.
+        try {
+            $dom = new \DOMDocument();
+            if ($dom->loadXML($response)) {
+                // Parse errors.
+                $errors = $dom->getElementsByTagName('error');
+                foreach ($errors as $error) {
+                    $this->responseArray[] = new W3CResponseParser('Error', $error);
+                }
+
+                // Parse warnings.
+                $warnings = $dom->getElementsByTagName('warning');
+                foreach ($warnings as $warning) {
+                    $this->responseArray[] = new W3CResponseParser('Warning', $warning);
+                }
             }
+        }
+        catch (Exception $e) {
+            return $e->getMessage();
         }
 
         // Format response text.

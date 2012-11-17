@@ -11,48 +11,53 @@
 
 namespace kevintweber\PhpunitW3CValidators\Connector;
 
+use kevintweber\PhpunitW3CValidators\Util\Throttle;
+
 abstract class Connector
 {
     protected $input;
     protected $outputType;
-    protected $port;
     protected $url;
 
     /**
-     * Constructor
+     * Will execute a cURL request.
      *
-     * @param string $input The markup to be tested.
+     * @param string $type The type of input.
+     *
+     * @return mixed The response from the web service.
      */
-    public function __construct()
+    public function execute($type)
     {
-        $this->port = null;
-    }
+        switch (strtolower($type)) {
+        case 'markup':
+            $curlOptArray = $this->getMarkupOpts();
+            break;
 
-    /**
-     * Will execute the cURL post request.
-     *
-     * @return mixed $response  The reponse from the web service.
-     */
-    public function execute()
-    {
-        // Set cURL opts.
-        $curlOpt = array(
-            CURLOPT_URL            => $this->url,
-            CURLOPT_PORT           => $this->port,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $this->getPostVariables(),
-            );
+        case 'file':
+            $curlOptArray = $this->getFileOpts();
+            break;
+
+        case 'url':
+            $curlOptArray = $this->getUrlOpts();
+            break;
+
+        default:
+            throw new \PHPUnit_Framework_Exception('Invalid type: ' . $type);
+            break;
+        }
+
+        $curlOptArray = $curlOptArray + array(CURLOPT_RETURNTRANSFER => true,
+                                              CURLOPT_TIMEOUT        => 10);
+
+        // Throttle calls (if necessary).
+        Throttle::delay(get_class($this));
 
         $curl = curl_init();
-        curl_setopt_array($curl, $curlOpt);
+        curl_setopt_array($curl, $curlOptArray);
 
         if (!$response = curl_exec($curl)) {
-            throw new PHPUnit_Framework_Exception(
-                sprintf('Unable to validate. cURL returning error %s',
-                        trigger_error(curl_error($curl))
-                    )
-                );
+            throw new \PHPUnit_Framework_Exception('Unable to validate. Error: ' .
+                                                   curl_error($curl));
         }
 
         curl_close($curl);
@@ -60,12 +65,9 @@ abstract class Connector
         return $response;
     }
 
-    /**
-     * The post variables are service specific.
-     *
-     * @return array The post variables.
-     */
-    abstract protected function getPostVariables();
+    abstract protected function getMarkupOpts();
+    abstract protected function getFileOpts();
+    abstract protected function getUrlOpts();
 
     /**
      * Process the result from the service.
@@ -129,26 +131,6 @@ abstract class Connector
     }
 
     /**
-     * Getter for 'port'.
-     *
-     * @return int|null The value of 'port'
-     */
-    public function getPort()
-    {
-        return $this->port;
-    }
-
-    /**
-     * Setter for 'port'.
-     *
-     * @param int|null $value The new value of 'port'
-     */
-    public function setPort($value)
-    {
-        $this->port = $value;
-    }
-
-    /**
      * Getter for 'url'.
      *
      * @return string The value of 'url'
@@ -165,8 +147,8 @@ abstract class Connector
      */
     public function setUrl($value)
     {
-        if ('http' != substr($value, 0, 4)) {
-            $value = 'http://' . $value;
+        if (filter_var($value, FILTER_VALIDATE_URL) === false) {
+            throw new \PHPUnit_Framework_Exception("Url is not valid.\n");
         }
 
         $this->url = $value;
