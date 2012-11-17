@@ -25,7 +25,7 @@ class HTML5Test extends \PHPUnit_Framework_TestCase
         try {
             HTML5::IsValidMarkup("<div>Whoa</asdf>");
         }
-        catch (PHPUnit_Framework_AssertionFailedError $e) {
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
             return;
         }
 

@@ -17,7 +17,6 @@ abstract class Connector
     protected $outputType;
     protected $port;
     protected $url;
-    protected $userAgent;
 
     /**
      * Constructor
@@ -27,7 +26,6 @@ abstract class Connector
     public function __construct()
     {
         $this->port = null;
-        $this->userAgent = 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)';
     }
 
     /**
@@ -39,13 +37,11 @@ abstract class Connector
     {
         // Set cURL opts.
         $curlOpt = array(
-            CURLOPT_USERAGENT      => $this->userAgent,
             CURLOPT_URL            => $this->url,
             CURLOPT_PORT           => $this->port,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST           => true,
             CURLOPT_POSTFIELDS     => $this->getPostVariables(),
-            CURLOPT_HTTPHEADER     => array('Content-Type: text/plain')
             );
 
         $curl = curl_init();
@@ -174,25 +170,5 @@ abstract class Connector
         }
 
         $this->url = $value;
-    }
-
-    /**
-     * Getter for 'userAgent'.
-     *
-     * @return string The value of 'userAgent'
-     */
-    public function getUserAgent()
-    {
-        return $this->userAgent;
-    }
-
-    /**
-     * Setter for 'userAgent'.
-     *
-     * @param string $value The new value of 'userAgent'
-     */
-    public function setUserAgent($value)
-    {
-        $this->userAgent = $value;
     }
 }
