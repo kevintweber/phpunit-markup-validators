@@ -35,6 +35,26 @@ class HTML5Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidFile
+     */
+    public function testIsValidFile()
+    {
+        HTML5::IsValidFile(__DIR__ . "/../files/HTML5_Valid.html",
+                           "Valid HTML5 file.");
+
+        try {
+            HTML5::IsValidFile(__DIR__ . "/../files/HTML5_Invalid.html",
+                               "Invalid HTML5 file.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+
+    }
+
+    /**
      * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
      */
     public function testIsValidUrl()
