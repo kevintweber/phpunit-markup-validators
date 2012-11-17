@@ -12,9 +12,8 @@
 namespace kevintweber\PhpunitW3CValidators\ResponseParser;
 
 use kevintweber\PhpunitW3CValidators\ResponseParser\ResponseParser;
-use kevintweber\PhpunitW3CValidators\Util\SelfDescribing;
 
-class W3CResponseParser extends ResponseParser implements SelfDescribing
+class W3CResponseParser extends ResponseParser
 {
     protected $response = array('type' => null,
                                 'data' => array());
