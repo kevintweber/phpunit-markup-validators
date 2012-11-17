@@ -11,14 +11,14 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
     {
         "repositories": [
             {
-			    "type": "vcs",
+                "type": "vcs",
                 "url": "http://github.com/kevintweber/PhpunitW3CValidators"
             }
         ],
         "require": {
             "kevintweber/PhpunitW3CValidators": "*"
         },
-	    "minimum-stability": "dev"
+        "minimum-stability": "dev"
     }
 
 3) Run "composer install".
@@ -43,9 +43,9 @@ use kevintweber\PhpunitW3CValidators\Assert\Html5;
 class test extends PHPUnit_Framework_TestCase
 {
     public function testHTMLValidation()
-	{
-	    HTML5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
-	}
+    {
+        HTML5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
+    }
 }
 ```
 
@@ -65,10 +65,13 @@ class test extends PHPUnit_Framework_TestCase
 </tbody>
 </table>
 
+## Authors
+Kevin Weber - [kevintweber@gmail.com]
+
 ## License
 PhpunitW3CValidators is licensed under the MIT license.  See `LICENSE` for more details.
 
-## Authors
+## Acknowledgements
 Parts were inspired from [xvoland/html-validate].
 
 [composer]: http://getcomposer.org/
