@@ -35,6 +35,27 @@ class CSSTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers kevintweber\PhpunitW3CValidators\Assert\HTML:IsValidFile
+     */
+    public function testIsValidFile()
+    {
+        // Test valid CSS file.
+        CSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Valid.css"),
+                          "Valid CSS file.");
+
+        // Test invalid CSS file.
+        try {
+            CSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Invalid.css"),
+                              "Invalid CSS file.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
      * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
      */
     /* public function testIsValidUrl() */

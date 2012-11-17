@@ -1,0 +1,13 @@
+/* CSS Level 1 */
+.center { text-align: center; }
+
+/* CSS Level 2 */
+.absolute { position: absolute; }
+.relative { position: relative; }
+.absolute .position { top: 0; left: 0; }
+
+/* CSS Level 3 */
+.border { border-radius: 4px; }
+
+/* Error here. */
+.border > .house ~ .sidewalk { border-radius: huge; }
