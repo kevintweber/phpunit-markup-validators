@@ -36,8 +36,6 @@ class HTMLW3CConnector extends HTMLConnector
     /**
      * Parses the SOAP 1.2 response.
      *
-     * @todo Need to parse warnings and errors.
-     *
      * @param string $result The SOAP 1.2 response.
      */
     public function processResponse($response)

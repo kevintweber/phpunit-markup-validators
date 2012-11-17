@@ -39,8 +39,6 @@ class FeedW3CConnector extends FeedConnector
     /**
      * Parses the SOAP 1.2 response.
      *
-     * @todo Need to parse warnings and errors.
-     *
      * @param string $response The SOAP 1.2 response.
      */
     public function processResponse($response)

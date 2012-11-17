@@ -39,8 +39,6 @@ class CSSW3CConnector extends Connector
     /**
      * Parses the SOAP 1.2 response.
      *
-     * @todo Need to parse warnings and errors.
-     *
      * @param string $response The SOAP 1.2 response.
      */
     public function processResponse($response)
