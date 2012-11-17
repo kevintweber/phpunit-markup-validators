@@ -16,12 +16,14 @@ use kevintweber\PhpunitW3CValidators\Assert\CSS;
 class CSSTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Asssert\CSS::IsValidMarkup
+     * @covers kevintweber\PhpunitW3CValidators\Assert\CSS::IsValidMarkup
      */
     public function testIsValidMarkup()
     {
+        // Test valid CSS markup.
         CSS::IsValidMarkup("div{color:black;}");
 
+        // Test invalid CSS markup.
         try {
             CSS::IsValidMarkup("div{color:badcolordude!;}");
         }
@@ -35,9 +37,9 @@ class CSSTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
      */
-    public function testIsValidUrl()
-    {
-        CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
-                        "Valid CSS url.");
-    }
+    /* public function testIsValidUrl() */
+    /* { */
+    /*     CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css", */
+    /*                     "Valid CSS url."); */
+    /* } */
 }
