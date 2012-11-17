@@ -22,7 +22,7 @@ class FeedW3CConnector extends FeedConnector
     {
         return array(
             'output' => $this->getOutputType(),
-            'manual' => 1,
+            'manual' => "1",
             'rawdata' => $this->getInput()
             );
     }
