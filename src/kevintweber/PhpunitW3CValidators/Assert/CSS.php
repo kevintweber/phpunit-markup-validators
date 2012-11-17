@@ -114,7 +114,7 @@ class CSS extends \PHPUnit_Framework_Assert
 
         // Query the service.
         $process = new Process($connector->getUrl() . "?output=" .
-							   $connector->getOutput() . "&url=" . $url);
+							   $connector->getOutputType() . "&url=" . $url);
         $process->setTimeout(10);
         $process->run();
         if (!$process->isSuccessful()) {
