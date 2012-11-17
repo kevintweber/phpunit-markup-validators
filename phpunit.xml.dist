@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="PhpunitW3CValidators Test Suite">
+            <directory>tests/PhpunitW3CValidators/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/PhpunitW3CValidators/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
