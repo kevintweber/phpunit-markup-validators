@@ -66,7 +66,7 @@ class test extends PHPUnit_Framework_TestCase
 </table>
 
 ## Authors
-Kevin Weber - [kevintweber@gmail.com]
+Kevin Weber - kevintweber@gmail.com
 
 ## License
 PhpunitW3CValidators is licensed under the MIT license.  See `LICENSE` for more details.
