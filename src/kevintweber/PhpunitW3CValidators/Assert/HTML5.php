@@ -42,7 +42,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Validate the html.
-        $connector->setInput($html);
+        $connector->setHtmlInput($html);
         $response = $connector->execute('markup');
 
         // Tell PHPUnit of the results.
@@ -82,7 +82,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Parse the html.
-        $connector->setInput($html);
+        $connector->setHtmlInput($html);
         $response = $connector->execute('file');
 
         // Tell PHPUnit of the results.
@@ -119,7 +119,7 @@ class HTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Parse the html.
-        $connector->setInput($html);
+        $connector->setInput($url);
         $response = $connector->execute('url');
 
         // Tell PHPUnit of the results.

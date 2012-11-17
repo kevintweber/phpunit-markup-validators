@@ -122,7 +122,7 @@ class Feed extends \PHPUnit_Framework_Assert
         }
 
         // Validate the feed
-        $connector->setInput($feed);
+        $connector->setInput($url);
         $response = $connector->execute('url');
 
         // Tell PHPUnit of the results.

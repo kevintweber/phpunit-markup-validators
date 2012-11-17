@@ -61,9 +61,9 @@ class HTML5Test extends \PHPUnit_Framework_TestCase
     /**
      * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
      */
-    /* public function testIsValidUrl() */
-    /* { */
-    /*     // Test valid HTML5 url. */
-    /*     HTML5::IsValidUrl("http://www.w3.org/TR/html5/", "Valid HTML5 url."); */
-    /* } */
+    public function testIsValidUrl()
+    {
+        // Test valid HTML5 url.
+        HTML5::IsValidUrl("http://www.w3.org/html/Activity.html", "Valid HTML5 url.");
+    }
 }

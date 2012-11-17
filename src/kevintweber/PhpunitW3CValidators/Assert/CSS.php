@@ -122,7 +122,7 @@ class CSS extends \PHPUnit_Framework_Assert
         }
 
         // Validate the css.
-        $connector->setInput($css);
+        $connector->setInput($url);
         $response = $connector->execute('url');
 
         // Tell PHPUnit of the results.
