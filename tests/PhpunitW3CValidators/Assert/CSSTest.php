@@ -58,9 +58,9 @@ class CSSTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
      */
-    /* public function testIsValidUrl() */
-    /* { */
-    /*     CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css", */
-    /*                     "Valid CSS url."); */
-    /* } */
+    public function testIsValidUrl()
+    {
+        CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
+                        "Valid CSS url.");
+    }
 }

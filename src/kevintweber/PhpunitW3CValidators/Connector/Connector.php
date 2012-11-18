@@ -46,7 +46,8 @@ abstract class Connector
             break;
         }
 
-        $curlOptArray = $curlOptArray + array(CURLOPT_RETURNTRANSFER => true);
+        $curlOptArray = $curlOptArray + array(CURLOPT_RETURNTRANSFER => true,
+                                              CURLOPT_TIMEOUT => 10);
 
         // Throttle calls (if necessary).
         Throttle::delay(get_class($this));

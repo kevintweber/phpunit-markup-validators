@@ -60,10 +60,10 @@ class HTMLTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers kevintweber\PhpunitW3CValidators\Assert\HTML::IsValidUrl
      */
-    /* public function testIsValidUrl() */
-    /* { */
-    /*     // Test valid HTML url. */
-    /*     HTML::IsValidUrl("http://www.w3.org/TR/1999/REC-html401-19991224/", */
-    /*                      "Valid HTML url."); */
-    /* } */
+    public function testIsValidUrl()
+    {
+        // Test valid HTML url.
+        HTML::IsValidUrl("http://www.w3.org/TR/1999/REC-html401-19991224/",
+                         "Valid HTML url.");
+    }
 }

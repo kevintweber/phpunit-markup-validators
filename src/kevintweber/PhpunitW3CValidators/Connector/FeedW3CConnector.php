@@ -12,7 +12,7 @@
 namespace kevintweber\PhpunitW3CValidators\Connector;
 
 use kevintweber\PhpunitW3CValidators\Connector\FeedConnector;
-use kevintweber\PhpunitW3CValidators\ResponseParser\W3CResponseParser;
+use kevintweber\PhpunitW3CValidators\ResponseParser\FeedW3CResponseParser;
 
 class FeedW3CConnector extends FeedConnector
 {
@@ -30,21 +30,19 @@ class FeedW3CConnector extends FeedConnector
     protected function getMarkupOpts()
     {
         return array(CURLOPT_URL        => $this->getUrl(),
-                     CURLOPT_POSTFIELDS => array(
-                         'output' => $this->getOutputType(),
-                         'manual' => '1',
-                         'rawdata' => $this->getInput()
-                         ));
+                     CURLOPT_POST       => true,
+                     CURLOPT_POSTFIELDS => 'output=' . urlencode($this->getOutputType()) .
+                     '&manual=1&rawdata=' . urlencode($this->getInput())
+                         );
     }
 
     protected function getFileOpts()
     {
         return array(CURLOPT_URL        => $this->getUrl(),
-                     CURLOPT_POSTFIELDS => array(
-                         'output' => $this->getOutputType(),
-                         'manual' => '1',
-                         'rawdata' => $this->getInput()
-                         ));
+                     CURLOPT_POST       => true,
+                     CURLOPT_POSTFIELDS => 'output=' . urlencode($this->getOutputType()) .
+                     '&manual=1&rawdata=' . urlencode($this->getInput())
+                         );
     }
 
     protected function getUrlOpts()
@@ -95,13 +93,13 @@ class FeedW3CConnector extends FeedConnector
                 // Parse errors.
                 $errors = $dom->getElementsByTagName('error');
                 foreach ($errors as $error) {
-                    $this->responseArray[] = new W3CResponseParser('Error', $error);
+                    $this->responseArray[] = new FeedW3CResponseParser('Error', $error);
                 }
 
                 // Parse warnings.
                 $warnings = $dom->getElementsByTagName('warning');
                 foreach ($warnings as $warning) {
-                    $this->responseArray[] = new W3CResponseParser('Warning', $warning);
+                    $this->responseArray[] = new FeedW3CResponseParser('Warning', $warning);
                 }
             }
         }
