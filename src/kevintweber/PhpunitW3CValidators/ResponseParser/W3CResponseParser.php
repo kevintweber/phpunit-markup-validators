@@ -36,7 +36,11 @@ class W3CResponseParser extends ResponseParser
             $lineResponse = " on line " . trim($this->response['data']['line']);
         }
 
-        return $this->response['type'] . $lineResponse . ": " .
-            trim($this->response['data']['message']);
+        $messageResponse = '';
+        if (isset($this->response['data']['message'])) {
+            $messageResponse = ": " . trim($this->response['data']['message']);
+        }
+
+        return $this->response['type'] . $lineResponse . $messageResponse;
     }
 }
