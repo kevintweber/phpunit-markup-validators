@@ -63,6 +63,8 @@ class CSSW3CConnector extends Connector
     {
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 $validityElement = $dom->getElementsByTagName('validity');
                 if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
@@ -91,6 +93,8 @@ class CSSW3CConnector extends Connector
         // Parse response.
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 // Parse errors.
                 $errors = $dom->getElementsByTagName('error');

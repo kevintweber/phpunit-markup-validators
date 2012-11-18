@@ -59,6 +59,8 @@ class HTMLW3CConnector extends HTMLConnector
     {
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 $validityElement = $dom->getElementsByTagName('validity');
                 if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
@@ -87,6 +89,8 @@ class HTMLW3CConnector extends HTMLConnector
         // Parse response.
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 // Parse errors.
                 $errors = $dom->getElementsByTagName('error');

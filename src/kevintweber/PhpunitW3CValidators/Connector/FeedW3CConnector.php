@@ -61,6 +61,8 @@ class FeedW3CConnector extends FeedConnector
     {
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 $validityElement = $dom->getElementsByTagName('validity');
                 if ($validityElement->length && $validityElement->item(0)->nodeValue == 'true') {
@@ -89,6 +91,8 @@ class FeedW3CConnector extends FeedConnector
         // Parse response.
         try {
             $dom = new \DOMDocument();
+            $dom->strictErrorChecking = false;
+
             if ($dom->loadXML($response)) {
                 // Parse errors.
                 $errors = $dom->getElementsByTagName('error');
