@@ -14,7 +14,7 @@ namespace kevintweber\PhpunitW3CValidators\Connector;
 use kevintweber\PhpunitW3CValidators\Connector\Connector;
 use kevintweber\PhpunitW3CValidators\ResponseParser\W3CResponseParser;
 
-class CSSW3CConnector extends Connector
+class CSSW3CConnector extends CSSConnector
 {
     /**
      * Constructor
