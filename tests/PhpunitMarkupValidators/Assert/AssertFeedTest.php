@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace PhpunitW3CValidators\Assert;
+namespace PhpunitMarkupValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Assert\AssertFeed;
+use kevintweber\PhpunitMarkupValidators\Assert\AssertFeed;
 
 class AssertFeedTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertFeed::IsValidMarkup
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidMarkup
      */
     public function testIsValidMarkup()
     {
@@ -39,7 +39,7 @@ class AssertFeedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertFeed::IsValidFile
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidFile
      */
     public function testIsValidFile()
     {
@@ -60,7 +60,7 @@ class AssertFeedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertFeed::IsValidUrl
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertFeed::IsValidUrl
      */
     public function testIsValidUrl()
     {

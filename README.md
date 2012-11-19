@@ -1,4 +1,4 @@
-# HTML and CSS Validation for PHPUnit
+# Markup Validation for PHPUnit
 
 This is an extension for [PHPUnit][phpunit] that uses online services for markup validation.
 
@@ -23,7 +23,7 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 ```json
 {
     "require": {
-        "kevintweber/PhpunitW3CValidators": "1.*"
+        "kevintweber/phpunit-markup-validators": "1.*"
     }
 }
 ```
@@ -45,7 +45,7 @@ Here is an example of a minimal test case that will pass.
 
 require_once("vendor/autoload.php");
 
-use kevintweber\PhpunitW3CValidators\Assert\Html5;
+use kevintweber\PhpunitMarkupValidators\Assert\AssertHtml5;
 
 class test extends PHPUnit_Framework_TestCase
 {

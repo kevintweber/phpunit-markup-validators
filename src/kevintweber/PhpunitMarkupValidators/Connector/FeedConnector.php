@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\Connector;
+namespace kevintweber\PhpunitMarkupValidators\Connector;
 
-use kevintweber\PhpunitW3CValidators\Connector\Connector;
+use kevintweber\PhpunitMarkupValidators\Connector\Connector;
 
 /**
  * A base class for feed connectors

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\ResponseParser;
+namespace kevintweber\PhpunitMarkupValidators\ResponseParser;
 
-use kevintweber\PhpunitW3CValidators\ResponseParser\ResponseParser;
+use kevintweber\PhpunitMarkupValidators\ResponseParser\ResponseParser;
 
 class W3CResponseParser extends ResponseParser
 {

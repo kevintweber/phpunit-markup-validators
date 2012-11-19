@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,31 +9,30 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\Assert;
+namespace kevintweber\PhpunitMarkupValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Connector\FeedConnector;
-use kevintweber\PhpunitW3CValidators\Connector\FeedW3CConnector;
-use kevintweber\PhpunitW3CValidators\Constraint\GenericConstraint;
-use Symfony\Component\Process\Process;
+use kevintweber\PhpunitMarkupValidators\Connector\CSSConnector;
+use kevintweber\PhpunitMarkupValidators\Connector\CSSW3CConnector;
+use kevintweber\PhpunitMarkupValidators\Constraint\GenericConstraint;
 
 /**
- * A validator for both RSS and Atom feeds.
+ * A validator for CSS
  */
-class AssertFeed extends \PHPUnit_Framework_Assert
+class AssertCSS extends \PHPUnit_Framework_Assert
 {
     /**
-     * Asserts that the feed string is valid.
+     * Asserts that the CSS string is valid.
      *
-     * @param string         $feed       The feed text to be validated.
+     * @param string         $css        The markup to be validated.
      * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML validation service.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
      */
-    public static function IsValidMarkup($feed,
+    public static function IsValidMarkup($css,
                                          $message = '',
-                                         FeedConnector $connector = null)
+                                         CSSConnector $connector = null)
     {
-        // Check that $feed is a string.
-        if (empty($feed) || !is_string($feed)) {
+        // Check that $css is a string.
+        if (empty($css) || !is_string($css)) {
             throw \PHPUnit_Util_InvalidArgumentHelper::factory(
                 1, 'string'
                 );
@@ -41,11 +40,11 @@ class AssertFeed extends \PHPUnit_Framework_Assert
 
         // Assign connector if there isn't one already.
         if ($connector === null) {
-            $connector = new FeedW3CConnector();
+            $connector = new CSSW3CConnector();
         }
 
-        // Validate the feed.
-        $connector->setInput($feed);
+        // Validate the css.
+        $connector->setInput($css);
         $response = $connector->execute('markup');
 
         // Tell PHPUnit of the results.
@@ -54,15 +53,15 @@ class AssertFeed extends \PHPUnit_Framework_Assert
     }
 
     /**
-     * Asserts that the feed file is valid.
+     * Asserts that the CSS file is valid.
      *
      * @param string         $path       The file path to be validated.
      * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML5 validation service.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
      */
     public static function IsValidFile($path,
                                        $message = '',
-                                       FeedConnector $connector = null)
+                                       CSSConnector $connector = null)
     {
         // Check that $path is exists.
         if (!file_exists($path)) {
@@ -72,8 +71,8 @@ class AssertFeed extends \PHPUnit_Framework_Assert
         }
 
         // Get file contents.
-        $feed = file_get_contents($path);
-        if ($feed === false) {
+        $css = file_get_contents($path);
+        if ($css === false) {
             throw new \PHPUnit_Framework_Exception(
                 sprintf('Cannot read file "%s".' . "\n", $path)
                 );
@@ -81,11 +80,11 @@ class AssertFeed extends \PHPUnit_Framework_Assert
 
         // Assign connector if there isn't one already.
         if ($connector === null) {
-            $connector = new FeedW3CConnector();
+            $connector = new CSSW3CConnector();
         }
 
-        // Validate the feed
-        $connector->setInput($feed);
+        // Validate the css.
+        $connector->setInput($css);
         $response = $connector->execute('file');
 
         // Tell PHPUnit of the results.
@@ -94,15 +93,15 @@ class AssertFeed extends \PHPUnit_Framework_Assert
     }
 
     /**
-     * Asserts that the feed url is valid.
+     * Asserts that the CSS url is valid.
      *
-     * @param string         $url        The external url to be validated.
+     * @param string         $url        The url to be validated.
      * @param string         $message    Test message.
-     * @param FeedConnector  $connector  A connector to a HTML5 validation service.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
      */
-    public static function IsValidURL($url,
+    public static function IsValidUrl($url,
                                       $message = '',
-                                      FeedConnector $connector = null)
+                                      CSSConnector $connector = null)
     {
         // Check that $url is a string.
         if (empty($url) || !is_string($url)) {
@@ -118,10 +117,10 @@ class AssertFeed extends \PHPUnit_Framework_Assert
 
         // Assign connector if there isn't one already.
         if ($connector === null) {
-            $connector = new FeedW3CConnector();
+            $connector = new CSSW3CConnector();
         }
 
-        // Validate the feed
+        // Validate the css.
         $connector->setInput($url);
         $response = $connector->execute('url');
 

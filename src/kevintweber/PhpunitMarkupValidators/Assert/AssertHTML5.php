@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,12 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\Assert;
+namespace kevintweber\PhpunitMarkupValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
-use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
-use kevintweber\PhpunitW3CValidators\Constraint\GenericConstraint;
-use Symfony\Component\Process\Process;
+use kevintweber\PhpunitMarkupValidators\Connector\HTMLConnector;
+use kevintweber\PhpunitMarkupValidators\Connector\HTML5ValidatorNuConnector;
+use kevintweber\PhpunitMarkupValidators\Constraint\GenericConstraint;
 
 class AssertHTML5 extends \PHPUnit_Framework_Assert
 {

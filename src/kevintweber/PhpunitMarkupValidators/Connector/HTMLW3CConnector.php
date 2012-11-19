@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\Connector;
+namespace kevintweber\PhpunitMarkupValidators\Connector;
 
-use kevintweber\PhpunitW3CValidators\Connector\HTMLConnector;
-use kevintweber\PhpunitW3CValidators\ResponseParser\W3CResponseParser;
+use kevintweber\PhpunitMarkupValidators\Connector\HTMLConnector;
+use kevintweber\PhpunitMarkupValidators\ResponseParser\W3CResponseParser;
 
 class HTMLW3CConnector extends HTMLConnector
 {
@@ -68,7 +68,7 @@ class HTMLW3CConnector extends HTMLConnector
                 }
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             throw new \PHPUnit_Framework_Exception($e->getMessage());
         }
 
@@ -105,7 +105,7 @@ class HTMLW3CConnector extends HTMLConnector
                 }
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             return $e->getMessage();
         }
 

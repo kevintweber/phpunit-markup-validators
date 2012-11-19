@@ -1,15 +1,15 @@
 {
-    "name": "kevintweber/PhpunitW3CValidators",
+    "name": "kevintweber/phpunit-markup-validators",
     "type": "library",
-    "description": "HTML and CSS validation for PHPUnit",
-    "keywords": ["html", "css", "validation", "phpunit"],
-    "homepage": "https://github.com/kevintweber/PhpunitW3CValidators",
+    "description": "HTML, CSS, and feed validation for PHPUnit",
+    "keywords": ["html", "css", "atom", "rss", "validation", "phpunit"],
+    "homepage": "https://github.com/kevintweber/phpunit-markup-validators",
     "license": "MIT",
     "require": {
         "php": ">= 5.3.3",
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": { "kevintweber\\PhpunitW3CValidators\\": "src/" }
+        "psr-0": { "kevintweber\\PhpunitMarkupValidators\\": "src/" }
     }
 }

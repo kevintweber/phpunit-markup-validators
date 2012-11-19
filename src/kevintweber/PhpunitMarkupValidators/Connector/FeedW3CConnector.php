@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace kevintweber\PhpunitW3CValidators\Connector;
+namespace kevintweber\PhpunitMarkupValidators\Connector;
 
-use kevintweber\PhpunitW3CValidators\Connector\FeedConnector;
-use kevintweber\PhpunitW3CValidators\ResponseParser\FeedW3CResponseParser;
+use kevintweber\PhpunitMarkupValidators\Connector\FeedConnector;
+use kevintweber\PhpunitMarkupValidators\ResponseParser\FeedW3CResponseParser;
 
 class FeedW3CConnector extends FeedConnector
 {
@@ -33,7 +33,7 @@ class FeedW3CConnector extends FeedConnector
                      CURLOPT_POST       => true,
                      CURLOPT_POSTFIELDS => 'output=' . urlencode($this->getOutputType()) .
                      '&manual=1&rawdata=' . urlencode($this->getInput())
-                         );
+            );
     }
 
     protected function getFileOpts()
@@ -42,7 +42,7 @@ class FeedW3CConnector extends FeedConnector
                      CURLOPT_POST       => true,
                      CURLOPT_POSTFIELDS => 'output=' . urlencode($this->getOutputType()) .
                      '&manual=1&rawdata=' . urlencode($this->getInput())
-                         );
+            );
     }
 
     protected function getUrlOpts()
@@ -70,7 +70,7 @@ class FeedW3CConnector extends FeedConnector
                 }
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             throw new \PHPUnit_Framework_Exception($e->getMessage());
         }
 
@@ -107,7 +107,7 @@ class FeedW3CConnector extends FeedConnector
                 }
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             return $e->getMessage();
         }
 

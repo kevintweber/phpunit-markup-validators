@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the PhpunitW3CValidators package.
+ * This file is part of the PhpunitMarkupValidators package.
  *
  * (c) Kevin Weber <kevintweber@gmail.com>
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace PhpunitW3CValidators\Assert;
+namespace PhpunitMarkupValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Assert\AssertHTML;
+use kevintweber\PhpunitMarkupValidators\Assert\AssertHTML;
 
 class AssertHTMLTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertHTML::IsValidMarkup
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidMarkup
      */
     public function testIsValidMarkup()
     {
@@ -37,7 +37,7 @@ class AssertHTMLTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertHTML::IsValidFile
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidFile
      */
     public function testIsValidFile()
     {
@@ -58,7 +58,7 @@ class AssertHTMLTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertHTML::IsValidUrl
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidUrl
      */
     public function testIsValidUrl()
     {
