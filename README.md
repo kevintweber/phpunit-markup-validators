@@ -20,11 +20,13 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 
 2) In your composer.json file, add the following:
 
-    {
-        "require": {
-            "kevintweber/PhpunitW3CValidators": "1.*"
-        }
+```json
+{
+    "require": {
+        "kevintweber/PhpunitW3CValidators": "1.*"
     }
+}
+```
 
 3) Run "composer install".
 
@@ -34,7 +36,7 @@ This library and all it's dependencies will be downloaded to your "vendor" direc
 
 ## Usage
 
-1) Build a test case as below:
+1) Build a test case.
 
 Here is an example of a minimal test case that will pass.
 
@@ -54,7 +56,7 @@ class test extends PHPUnit_Framework_TestCase
 }
 ```
 
-2) From your console, run "php vendor/bin/phpunit \<path/to/tests\>"
+2) From your console, run `php vendor/bin/phpunit \<path/to/tests\>`
 
 Each assert class has three methods:
 
