@@ -58,11 +58,11 @@ class test extends PHPUnit_Framework_TestCase
 
 Each assert class has three methods:
 
-1) IsValidMarkup(string $markup, string $message = '', Connector $connector = null) - Passes test if $markup is valid markup.
+1) `IsValidMarkup(string $markup, string $message = '', Connector $connector = null)` - Passes test if $markup is valid markup.
 
-2) IsValidFile(string $pathToFile, string $message = '', Connector $connector = null) - Passes test if file at $pathToFile has valid markup.
+2) `IsValidFile(string $pathToFile, string $message = '', Connector $connector = null)` - Passes test if file at $pathToFile has valid markup.
 
-3) IsValidUrl(string $URL, string $message = '', Connector $connector = null) - Passes test if webpage at $URL has valid markup.
+3) `IsValidUrl(string $URL, string $message = '', Connector $connector = null)` - Passes test if webpage at $URL has valid markup.
 
 In the event that a test fails, first the $message will be displayed, then a detailed error report will be listed.
 
