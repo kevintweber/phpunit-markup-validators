@@ -19,7 +19,7 @@ use Symfony\Component\Process\Process;
 /**
  * A validator for both RSS and Atom feeds.
  */
-class Feed extends \PHPUnit_Framework_Assert
+class AssertFeed extends \PHPUnit_Framework_Assert
 {
     /**
      * Asserts that the feed string is valid.

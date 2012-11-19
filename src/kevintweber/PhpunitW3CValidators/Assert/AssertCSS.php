@@ -19,7 +19,7 @@ use Symfony\Component\Process\Process;
 /**
  * A validator for CSS
  */
-class CSS extends \PHPUnit_Framework_Assert
+class AssertCSS extends \PHPUnit_Framework_Assert
 {
     /**
      * Asserts that the CSS string is valid.

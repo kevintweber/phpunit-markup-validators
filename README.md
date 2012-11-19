@@ -7,10 +7,10 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 <tr><th>Class</th><th>Validates</th><th>Service</th></tr>
 </thead>
 <tbody>
-<tr><td>HTML5</td><td>HTML5</td><td>http://html5.validator.nu/</td></tr>
-<tr><td>HTML</td><td>HTML and XHTML</td><td>http://validator.w3.org/</td></tr>
-<tr><td>CSS</td><td>CSS Levels 1-3</td><td>http://jigsaw.w3.org/css-validator/</td></tr>
-<tr><td>Feed</td><td>RSS and Atom feeds</td><td>http://validator.w3.org/feed/</td></tr>
+<tr><td>AssertHTML5</td><td>HTML5</td><td>http://html5.validator.nu/</td></tr>
+<tr><td>AssertHTML</td><td>HTML and XHTML</td><td>http://validator.w3.org/</td></tr>
+<tr><td>AssertCSS</td><td>CSS Levels 1-3</td><td>http://jigsaw.w3.org/css-validator/</td></tr>
+<tr><td>AssertFeed</td><td>RSS and Atom feeds</td><td>http://validator.w3.org/feed/</td></tr>
 </tbody>
 </table>
 
@@ -49,7 +49,7 @@ class test extends PHPUnit_Framework_TestCase
 {
     public function testHTMLValidation()
     {
-        HTML5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
+        AssertHTML5::IsValidMarkup("<div>Whoa</div>", "Optional custom message.");
     }
 }
 ```
@@ -58,11 +58,14 @@ class test extends PHPUnit_Framework_TestCase
 
 Each assert class has three methods:
 
-1) `IsValidMarkup(string $markup, string $message = '', Connector $connector = null)` - Passes test if $markup is valid markup.
+1) `IsValidMarkup(string $markup, string $message = '', Connector $connector = null)`
+Passes test if $markup is valid markup.
 
-2) `IsValidFile(string $pathToFile, string $message = '', Connector $connector = null)` - Passes test if file at $pathToFile has valid markup.
+2) `IsValidFile(string $pathToFile, string $message = '', Connector $connector = null)`
+Passes test if file at $pathToFile has valid markup.
 
-3) `IsValidUrl(string $URL, string $message = '', Connector $connector = null)` - Passes test if webpage at $URL has valid markup.
+3) `IsValidUrl(string $URL, string $message = '', Connector $connector = null)`
+Passes test if webpage at $URL has valid markup.
 
 In the event that a test fails, first the $message will be displayed, then a detailed error report will be listed.
 

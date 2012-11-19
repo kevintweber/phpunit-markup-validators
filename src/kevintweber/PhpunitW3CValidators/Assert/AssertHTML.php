@@ -19,7 +19,7 @@ use Symfony\Component\Process\Process;
 /**
  * A validator for both HTML and XHTML
  */
-class HTML extends \PHPUnit_Framework_Assert
+class AssertHTML extends \PHPUnit_Framework_Assert
 {
     /**
      * Asserts that the (X)HTML string is valid.

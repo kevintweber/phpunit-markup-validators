@@ -16,7 +16,7 @@ use kevintweber\PhpunitW3CValidators\Connector\HTML5ValidatorNuConnector;
 use kevintweber\PhpunitW3CValidators\Constraint\GenericConstraint;
 use Symfony\Component\Process\Process;
 
-class HTML5 extends \PHPUnit_Framework_Assert
+class AssertHTML5 extends \PHPUnit_Framework_Assert
 {
     /**
      * Asserts that the HTML5 string is valid.

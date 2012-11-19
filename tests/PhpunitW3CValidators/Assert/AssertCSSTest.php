@@ -11,21 +11,21 @@
 
 namespace PhpunitW3CValidators\Assert;
 
-use kevintweber\PhpunitW3CValidators\Assert\CSS;
+use kevintweber\PhpunitW3CValidators\Assert\AssertCSS;
 
-class CSSTest extends \PHPUnit_Framework_TestCase
+class AssertCSSTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\CSS::IsValidMarkup
+     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertCSS::IsValidMarkup
      */
     public function testIsValidMarkup()
     {
         // Test valid CSS markup.
-        CSS::IsValidMarkup("div{color:black;}");
+        AssertCSS::IsValidMarkup("div{color:black;}");
 
         // Test invalid CSS markup.
         try {
-            CSS::IsValidMarkup("div{color:badcolordude!;}");
+            AssertCSS::IsValidMarkup("div{color:badcolordude!;}");
         }
         catch (\PHPUnit_Framework_AssertionFailedError $e) {
             return;
@@ -35,18 +35,18 @@ class CSSTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert\HTML:IsValidFile
+     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertCSS::IsValidFile
      */
     public function testIsValidFile()
     {
         // Test valid CSS file.
-        CSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Valid.css"),
-                          "Valid CSS file.");
+        AssertCSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Valid.css"),
+                               "Valid CSS file.");
 
         // Test invalid CSS file.
         try {
-            CSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Invalid.css"),
-                              "Invalid CSS file.");
+            AssertCSS::IsValidFile(realpath(__DIR__ . "/../../files/CSS_Invalid.css"),
+                                   "Invalid CSS file.");
         }
         catch (\PHPUnit_Framework_AssertionFailedError $e) {
             return;
@@ -56,11 +56,11 @@ class CSSTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers kevintweber\PhpunitW3CValidators\Assert::IsValidUrl
+     * @covers kevintweber\PhpunitW3CValidators\Assert\AssertCSS::IsValidUrl
      */
     public function testIsValidUrl()
     {
-        CSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
-                        "Valid CSS url.");
+        AssertCSS::IsValidUrl("http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE.css",
+                              "Valid CSS url.");
     }
 }
