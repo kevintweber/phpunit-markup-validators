@@ -20,7 +20,7 @@ namespace kevintweber\PhpunitMarkupValidators\Util;
  */
 class Throttle
 {
-    static protected $timeAccessed = array();
+    protected $timeAccessed = array();
 
     static protected $instance = null;
 
