@@ -18,21 +18,11 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 
 1) Install [Composer][composer].
 
-2) In your composer.json file, add the following:
+2) `composer require kevintweber/phpunit-markup-validators`<br />or add it to your composer.json file.
 
-```json
-{
-    "require": {
-        "kevintweber/phpunit-markup-validators": "1.*"
-    }
-}
-```
+3) Install [PHPUnit][phpunit].
 
-3) Run "composer install".
-
-4) Watch the magic happen ...
-
-This library and all it's dependencies will be downloaded to your "vendor" directory.  [Composer][composer] offers many VERY USEFUL features.  Read the composer documentation: it will be worth your time.
+Note: I have removed PHPUnit as a composer dependency for folks who run it globally (via PEAR or the PHAR archive, etc.).  To install it locally, use: `composer require phpunit/phpunit`
 
 ## Usage
 
@@ -76,7 +66,7 @@ Note: Each online service requests that API usage does not exceed 1 request per 
 Kevin Weber - kevintweber@gmail.com
 
 ## License
-PhpunitW3CValidators is licensed under the MIT license.  See `LICENSE` for more details.
+phpunit-markup-validators is licensed under the MIT license.  See `LICENSE` for more details.
 
 ## Acknowledgements
 Parts were inspired from [xvoland/html-validate].
