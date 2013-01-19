@@ -22,7 +22,7 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 
 3) Install [PHPUnit][phpunit].
 
-Note: I have removed PHPUnit as a composer dependency for folks who run it globally (via PEAR or the PHAR archive, etc.).  To install it locally, use: `composer require phpunit/phpunit`
+Note: I have removed PHPUnit as a composer dependency for folks who run PHPUnit globally (via PEAR or the PHAR archive, etc.).  To install PHPUnit locally, use: `composer require phpunit/phpunit`
 
 ## Usage
 
