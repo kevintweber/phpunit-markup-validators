@@ -62,16 +62,4 @@ class AssertHTML5Test extends \PHPUnit_Framework_TestCase
 
         $this->fail();
     }
-
-    /**
-     * @covers Kevintweber\PhpunitMarkupValidators\Assert\AssertHTML5::IsValidUrl
-     */
-    /* public function testIsValidUrl() */
-    /* { */
-    /*     // Test valid HTML5 url. */
-    /*     AssertHTML5::IsValidUrl( */
-    /*         "http://www.w3.org/html/Activity.html", */
-    /*         "Valid HTML5 url." */
-    /*     ); */
-    /* } */
 }
