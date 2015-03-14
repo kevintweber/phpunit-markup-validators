@@ -12,7 +12,7 @@
 namespace Kevintweber\PhpunitMarkupValidators\Connector;
 
 
-class HTML5ValidatorNuConnector extends HTMLConnector
+class HTML5ValidatorNuConnector extends Connector
 {
     /**
      * Constructor.
@@ -64,5 +64,20 @@ class HTML5ValidatorNuConnector extends HTMLConnector
         }
 
         return false;
+    }
+
+    /**
+     * Ensure that HTML fragments are submitted as complete webpages.
+     *
+     * @param string $value The HTML markup, either a fragment or a complete webpage.
+     */
+    public function setInput($value)
+    {
+        if (stripos($value, 'html>') === false) {
+            $this->input = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Title</title></head><body>'.
+                $value.'</body></html>';
+        } else {
+            $this->input = $value;
+        }
     }
 }

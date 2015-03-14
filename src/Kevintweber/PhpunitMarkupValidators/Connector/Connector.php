@@ -13,7 +13,7 @@ namespace Kevintweber\PhpunitMarkupValidators\Connector;
 
 use Kevintweber\PhpunitMarkupValidators\Util\Throttle;
 
-abstract class Connector
+abstract class Connector implements ConnectorInterface
 {
     protected $input;
     protected $outputType;

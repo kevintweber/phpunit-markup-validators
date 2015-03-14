@@ -11,7 +11,7 @@
 
 namespace Kevintweber\PhpunitMarkupValidators\Assert;
 
-use Kevintweber\PhpunitMarkupValidators\Connector\HTMLConnector;
+use Kevintweber\PhpunitMarkupValidators\Connector\ConnectorInterface;
 use Kevintweber\PhpunitMarkupValidators\Connector\HTML5ValidatorNuConnector;
 use Kevintweber\PhpunitMarkupValidators\Constraint\GenericConstraint;
 
@@ -20,13 +20,13 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
     /**
      * Asserts that the HTML5 string is valid.
      *
-     * @param string        $html      The markup to be validated.
-     * @param string        $message   Test message.
-     * @param HTMLConnector $connector A connector to a HTML5 validation service.
+     * @param string             $html      The markup to be validated.
+     * @param string             $message   Test message.
+     * @param ConnectorInterface $connector Connector to HTML5 validation service.
      */
     public static function isValidMarkup($html,
                                          $message = '',
-                                         HTMLConnector $connector = null)
+                                         ConnectorInterface $connector = null)
     {
         // Check that $html is a string.
         if (empty($html) || !is_string($html)) {
@@ -39,7 +39,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Validate the html.
-        $connector->setHtmlInput($html);
+        $connector->setInput($html);
         $response = $connector->execute('markup');
 
         // Tell PHPUnit of the results.
@@ -50,13 +50,13 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
     /**
      * Asserts that the HTML5 file is valid.
      *
-     * @param string        $path      The file path to be validated.
-     * @param string        $message   Test message.
-     * @param HTMLConnector $connector A connector to a HTML5 validation service.
+     * @param string             $path      The file path to be validated.
+     * @param string             $message   Test message.
+     * @param ConnectorInterface $connector Connector to HTML5 validation service.
      */
     public static function isValidFile($path,
                                        $message = '',
-                                       HTMLConnector $connector = null)
+                                       ConnectorInterface $connector = null)
     {
         // Check that $path is exists.
         if (!file_exists($path)) {
@@ -79,7 +79,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
         }
 
         // Parse the html.
-        $connector->setHtmlInput($html);
+        $connector->setInput($html);
         $response = $connector->execute('file');
 
         // Tell PHPUnit of the results.
@@ -90,13 +90,13 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
     /**
      * Asserts that the HTML5 url is valid.
      *
-     * @param string        $url       The external url to be validated.
-     * @param string        $message   Test message.
-     * @param HTMLConnector $connector A connector to a HTML5 validation service.
+     * @param string             $url       The external url to be validated.
+     * @param string             $message   Test message.
+     * @param ConnectorInterface $connector Connector to HTML5 validation service.
      */
     public static function isValidURL($url,
                                       $message = '',
-                                      HTMLConnector $connector = null)
+                                      ConnectorInterface $connector = null)
     {
         // Check that $url is a string.
         if (empty($url) || !is_string($url)) {

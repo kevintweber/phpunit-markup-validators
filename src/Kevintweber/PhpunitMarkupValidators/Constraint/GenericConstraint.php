@@ -11,7 +11,7 @@
 
 namespace Kevintweber\PhpunitMarkupValidators\Constraint;
 
-use Kevintweber\PhpunitMarkupValidators\Connector\Connector;
+use Kevintweber\PhpunitMarkupValidators\Connector\ConnectorInterface;
 
 class GenericConstraint extends \PHPUnit_Framework_Constraint
 {
@@ -23,7 +23,7 @@ class GenericConstraint extends \PHPUnit_Framework_Constraint
     /**
      * Constructor.
      */
-    public function __construct(Connector $connector)
+    public function __construct(ConnectorInterface $connector)
     {
         $this->connector = $connector;
     }
