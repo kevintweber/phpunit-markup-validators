@@ -1,6 +1,7 @@
 # Changelog
 
-## v2.0.0
+## v2.0.0 - March 14th, 2015
+* Works with PHPUnit 4.0+
 * PSR-2 compliant
 * PSR-4 autoloading
 * Removed Feed validator (buggy validator)
