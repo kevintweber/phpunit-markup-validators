@@ -21,14 +21,14 @@ class AssertHTML5Test extends \PHPUnit_Framework_TestCase
     public function testIsValidMarkup()
     {
         // Test valid HTML5 markup.
-        AssertHTML5::IsValidMarkup(
+        AssertHTML5::isValidMarkup(
             "<section><div>Whoa</div></section>",
             "Valid HTML5 fragment."
         );
 
         // Test invalid HTML5 markup.
         try {
-            AssertHTML5::IsValidMarkup(
+            AssertHTML5::isValidMarkup(
                 "<section><div>Whoa</section></div>",
                 "Invalid HTML5 fragment."
             );
@@ -45,14 +45,14 @@ class AssertHTML5Test extends \PHPUnit_Framework_TestCase
     public function testIsValidFile()
     {
         // Test valid HTML5 file.
-        AssertHTML5::IsValidFile(
+        AssertHTML5::isValidFile(
             realpath(__DIR__."/../../files/HTML5_Valid.html"),
             "Valid HTML5 file."
         );
 
         // Test invalid HTML5 file.
         try {
-            AssertHTML5::IsValidFile(
+            AssertHTML5::isValidFile(
                 realpath(__DIR__."/../../files/HTML5_Invalid.html"),
                 "Invalid HTML5 file."
             );

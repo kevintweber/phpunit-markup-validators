@@ -24,7 +24,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
      * @param string        $message   Test message.
      * @param HTMLConnector $connector A connector to a HTML5 validation service.
      */
-    public static function IsValidMarkup($html,
+    public static function isValidMarkup($html,
                                          $message = '',
                                          HTMLConnector $connector = null)
     {
@@ -54,7 +54,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
      * @param string        $message   Test message.
      * @param HTMLConnector $connector A connector to a HTML5 validation service.
      */
-    public static function IsValidFile($path,
+    public static function isValidFile($path,
                                        $message = '',
                                        HTMLConnector $connector = null)
     {
@@ -94,7 +94,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
      * @param string        $message   Test message.
      * @param HTMLConnector $connector A connector to a HTML5 validation service.
      */
-    public static function IsValidURL($url,
+    public static function isValidURL($url,
                                       $message = '',
                                       HTMLConnector $connector = null)
     {
