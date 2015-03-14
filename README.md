@@ -19,7 +19,7 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 
 3) Install [PHPUnit][phpunit].
 
-Note: I have removed PHPUnit as a composer dependency for folks who run PHPUnit globally (via PEAR or the PHAR archive, etc.).  To install PHPUnit locally, use: `composer require phpunit/phpunit`
+Note: I have removed PHPUnit as a composer dependency for folks who run PHPUnit globally.  To install PHPUnit locally, use: `composer require phpunit/phpunit`
 
 ## Usage
 
@@ -32,7 +32,7 @@ require_once("vendor/autoload.php");
 
 use Kevintweber\PhpunitMarkupValidators\Assert\AssertHtml5;
 
-class Test extends PHPUnit_Framework_TestCase
+class HtmlTest extends PHPUnit_Framework_TestCase
 {
     public function testHTMLValidation()
     {
