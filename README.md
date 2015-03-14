@@ -8,9 +8,6 @@ This is an extension for [PHPUnit][phpunit] that uses online services for markup
 </thead>
 <tbody>
 <tr><td>AssertHTML5</td><td>HTML5</td><td>http://html5.validator.nu/</td></tr>
-<tr><td>AssertHTML</td><td>HTML and XHTML</td><td>http://validator.w3.org/</td></tr>
-<tr><td>AssertCSS</td><td>CSS Levels 1-3</td><td>http://jigsaw.w3.org/css-validator/</td></tr>
-<tr><td>AssertFeed</td><td>RSS and Atom feeds</td><td>http://validator.w3.org/feed/</td></tr>
 </tbody>
 </table>
 
@@ -26,8 +23,6 @@ Note: I have removed PHPUnit as a composer dependency for folks who run PHPUnit 
 
 ## Usage
 
-1) Build a test case.
-
 Here is an example of a minimal test case that will pass.
 
 ```php
@@ -35,9 +30,9 @@ Here is an example of a minimal test case that will pass.
 
 require_once("vendor/autoload.php");
 
-use kevintweber\PhpunitMarkupValidators\Assert\AssertHtml5;
+use Kevintweber\PhpunitMarkupValidators\Assert\AssertHtml5;
 
-class test extends PHPUnit_Framework_TestCase
+class Test extends PHPUnit_Framework_TestCase
 {
     public function testHTMLValidation()
     {
@@ -45,8 +40,6 @@ class test extends PHPUnit_Framework_TestCase
     }
 }
 ```
-
-2) From your console, run `php vendor/bin/phpunit \<path/to/tests\>`
 
 Each assert class has three methods:
 
