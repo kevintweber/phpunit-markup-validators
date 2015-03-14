@@ -30,9 +30,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
     {
         // Check that $html is a string.
         if (empty($html) || !is_string($html)) {
-            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
-                1, 'string'
-                );
+            throw \PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
         }
 
         // Assign connector if there isn't one already.
@@ -64,7 +62,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
         if (!file_exists($path)) {
             throw new \PHPUnit_Framework_Exception(
                 sprintf('File "%s" does not exist.'."\n", $path)
-                );
+            );
         }
 
         // Get file contents.
@@ -72,7 +70,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
         if ($html === false) {
             throw new \PHPUnit_Framework_Exception(
                 sprintf('Cannot read file "%s".'."\n", $path)
-                );
+            );
         }
 
         // Assign connector if there isn't one already.
@@ -102,9 +100,7 @@ class AssertHTML5 extends \PHPUnit_Framework_Assert
     {
         // Check that $url is a string.
         if (empty($url) || !is_string($url)) {
-            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
-                1, 'string'
-                );
+            throw \PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
         }
 
         // Check that $url is a valid url.
